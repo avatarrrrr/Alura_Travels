@@ -3,4 +3,8 @@
     <string name="specials">Specials</string>
     <string name="brazil">Brazil</string>
     <string name="activity_packages_list_image_view_content_description">Color purple banner.</string>
+    <string name="item_package_city_name">São Paulo</string>
+    <string name="item_menu_travel_days">2 dias</string>
+    <string name="item_menu_image_content_description">Image of travel destination.</string>
+    <string name="item_menu_price">R$ 300,00</string>
 </resources>
