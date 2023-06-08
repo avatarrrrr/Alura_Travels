@@ -44,11 +44,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <ListView
+        android:id="@+id/packages_list_listview"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView" />
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        tools:listitem="@layout/item_package" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
