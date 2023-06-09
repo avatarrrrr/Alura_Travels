@@ -1,21 +1,18 @@
 package br.com.alura.aluratravels.ui.adapter;
 
-import android.annotation.SuppressLint;
+
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.res.ResourcesCompat;
 
 import java.util.List;
-import java.util.Locale;
 
 import br.com.alura.aluratravels.R;
+import br.com.alura.aluratravels.ui.Utils;
 import br.com.alura.aluratravels.ui.viewholders.ItemPackageViewHolder;
 import br.com.alura.aluraviagens.model.PackageModel;
 
@@ -51,23 +48,6 @@ public class PackagesListAdapter extends BaseAdapter {
         return view;
     }
 
-    private void bindAPackageToView(int position, View view) {
-        final PackageModel packageItem = packages.get(position);
-
-        final ItemPackageViewHolder holder = (ItemPackageViewHolder) view.getTag();
-
-        holder.locationFieldView.setText(packageItem.getLocation());
-
-        final Resources resources = context.getResources();
-        @SuppressLint("DiscouragedApi") final int imageResourceID = resources.getIdentifier(packageItem.getImage(), "drawable", context.getPackageName());
-        final Drawable imageDrawable = ResourcesCompat.getDrawable(resources, imageResourceID, context.getTheme());
-        holder.imageView.setImageDrawable(imageDrawable);
-
-        holder.daysFieldView.setText(context.getString(R.string.days, packageItem.getDays()));
-
-        holder.priceFieldView.setText(String.format(Locale.getDefault(), "%f", packageItem.getPrice()));
-    }
-
     @NonNull
     private View recuperateOrCreateNewView(View convertView, ViewGroup parent) {
         View view;
@@ -83,4 +63,15 @@ public class PackagesListAdapter extends BaseAdapter {
 
         return view;
     }
+
+    private void bindAPackageToView(int position, View view) {
+        final PackageModel packageItem = packages.get(position);
+        final ItemPackageViewHolder holder = (ItemPackageViewHolder) view.getTag();
+
+        holder.locationFieldView.setText(packageItem.getLocation());
+        holder.imageView.setImageDrawable(Utils.getDrawableFromString(packageItem.getImage(), context));
+        holder.daysFieldView.setText(context.getString(R.string.days, packageItem.getDays()));
+        holder.priceFieldView.setText(Utils.getPriceFormatted(packageItem.getPrice()));
+    }
+
 }

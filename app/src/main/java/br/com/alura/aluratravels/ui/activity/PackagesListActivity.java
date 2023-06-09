@@ -15,6 +15,11 @@ public class PackagesListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_packages_list);
+        setTitle(getString(R.string.packages_list_activity_title));
+        configListView();
+    }
+
+    private void configListView() {
         final ListView packagesListView = findViewById(R.id.packages_list_listview);
         packagesListView.setAdapter(new PackagesListAdapter(new PackagesDAO().generateList(), this));
     }
