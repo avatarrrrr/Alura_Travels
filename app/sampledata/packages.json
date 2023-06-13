@@ -4,37 +4,43 @@
       "location": "São Paulo",
       "image": "@drawable/sao_paulo_sp",
       "days": "2 dias",
-      "price": "R$ 243,99"
+      "price": "R$ 243,99",
+      "time": "08/12 - 10/12 de 2017"
     },
     {
       "location": "Belo Horizonte",
       "image": "@drawable/belo_horizonte_mg",
       "days": "3 dias",
-      "price": "R$ 421,50"
+      "price": "R$ 421,50",
+      "time": "05/12 - 10/11 de 2017"
     },
     {
       "location": "Recife",
       "image": "@drawable/recife_pe",
       "days": "4 dias",
-      "price": "R$ 754,20"
+      "price": "R$ 754,20",
+      "time": "05/12 - 10/11 de 2017"
     },
     {
       "location": "Rio de Janeiro",
       "image": "@drawable/rio_de_janeiro_rj",
       "days": "6 dias",
-      "price": "R$ 532,55"
+      "price": "R$ 532,55",
+      "time": "05/12 - 10/11 de 2017"
     },
     {
       "location": "Salvador",
       "image": "@drawable/salvador_ba",
       "days": "5 dias",
-      "price": "R$ 899,99"
+      "price": "R$ 899,99",
+      "time": "05/12 - 10/11 de 2017"
     },
     {
       "location": "Foz do Iguaçu",
       "image": "@drawable/foz_do_iguacu_pr",
       "days": "1 dia",
-      "price": "R$ 289,90"
+      "price": "R$ 289,90",
+      "time": "05/12 - 10/11 de 2017"
     }
   ]
 }
