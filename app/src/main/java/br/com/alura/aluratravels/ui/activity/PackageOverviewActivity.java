@@ -1,5 +1,6 @@
 package br.com.alura.aluratravels.ui.activity;
 
+import android.content.Intent;
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -22,6 +23,7 @@ public class PackageOverviewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_package_overview);
         setTitle(getString(R.string.activity_package_overview_title));
+        startActivity(new Intent(this, PaymentActivity.class));
 
         final PackageModel packageModel = new PackageModel("Belo Horizonte", "belo_horizonte_mg", 3, new BigDecimal("421.50"));
 

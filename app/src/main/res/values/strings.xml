@@ -13,4 +13,15 @@
     <string name="activity_package_overview_button">Pay</string>
     <string name="activity_package_overview_title">Package Overview</string>
     <string name="activity_package_overview_travel_time">%1$s - %2$s de %3$d</string>
+    <string name="activity_payment_text_view_title">Enter the credit card information you wish to use for payment.</string>
+    <string name="activity_payment_price_title">Total price:</string>
+    <string name="activity_payment_card_number_placeholder">Card number</string>
+    <string name="activity_payment_card_number_icon_description">A credit card image</string>
+    <string name="activity_payment_card_validity_month_hint">MM</string>
+    <string name="activity_payment_card_validity_year_hint">YY</string>
+    <string name="activity_payment_card_validity_cvc_hint">CVC</string>
+    <string name="activity_payment_card_name_hint">Name on card</string>
+    <string name="activity_payment_button_finish">Finish</string>
+    <string name="activity_payment_title">Payment</string>
+    <string name="activity_payment_mask_card_number">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáéíóúâêôãõàçÁÉÓÚÂÊÔÃÕÀÇ\u0020</string>
 </resources>
