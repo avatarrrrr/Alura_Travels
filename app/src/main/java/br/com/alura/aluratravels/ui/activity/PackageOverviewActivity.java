@@ -1,16 +1,10 @@
 package br.com.alura.aluratravels.ui.activity;
 
-import android.content.Intent;
-import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.math.BigDecimal;
-import java.util.Calendar;
-import java.util.Locale;
 
 import br.com.alura.aluratravels.R;
 import br.com.alura.aluratravels.ui.Utils;
@@ -18,15 +12,14 @@ import br.com.alura.aluraviagens.model.PackageModel;
 
 public class PackageOverviewActivity extends AppCompatActivity {
 
+    PackageModel packageModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_package_overview);
         setTitle(getString(R.string.activity_package_overview_title));
-        startActivity(new Intent(this, PaymentActivity.class));
-
-        final PackageModel packageModel = new PackageModel("Belo Horizonte", "belo_horizonte_mg", 3, new BigDecimal("421.50"));
-
+        packageModel = Utils.verifyIfHasPackageOnIntent(this);
         bindPackagesOnViews(packageModel);
     }
 
@@ -35,7 +28,7 @@ public class PackageOverviewActivity extends AppCompatActivity {
         bindTextOnTextView(packageModel.getLocation(), R.id.package_overview_location);
         bindTextOnTextView(getString(R.string.days, packageModel.getDays()), R.id.package_overview_days);
         bindTextOnTextView(Utils.getPriceFormatted(packageModel.getPrice()), R.id.package_overview_price);
-        bindTextOnTextView(getDestinationPeriodFormatted(packageModel.getDays()), R.id.package_overview_time);
+        bindTextOnTextView(Utils.getDestinationPeriodFormatted(packageModel.getDays(), this), R.id.package_overview_time);
     }
 
     private void bindImage(String imageName) {
@@ -46,18 +39,5 @@ public class PackageOverviewActivity extends AppCompatActivity {
     private void bindTextOnTextView(String text, int viewIdentifier) {
         final TextView view = findViewById(viewIdentifier);
         view.setText(text);
-    }
-
-    private String getDestinationPeriodFormatted(int daysToTravel) {
-        final Calendar dateToStartTravel = Calendar.getInstance();
-        final Calendar dateToFinishTravel = Calendar.getInstance();
-        final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM", Locale.getDefault());
-
-        dateToFinishTravel.add(Calendar.DATE, daysToTravel);
-
-        final String dateToStartTravelFormatted = dateFormat.format(dateToStartTravel.getTime());
-        final String dateToFinishTravelFormatted = dateFormat.format(dateToFinishTravel.getTime());
-
-        return getString(R.string.activity_package_overview_travel_time, dateToStartTravelFormatted, dateToFinishTravelFormatted, dateToFinishTravel.get(Calendar.YEAR));
     }
 }

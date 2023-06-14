@@ -8,10 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 
-import java.math.BigDecimal;
-
 import br.com.alura.aluratravels.R;
 import br.com.alura.aluratravels.ui.Utils;
+import br.com.alura.aluraviagens.model.PackageModel;
 
 public class PaymentActivity extends AppCompatActivity {
     TextView priceView;
@@ -22,12 +21,15 @@ public class PaymentActivity extends AppCompatActivity {
     TextInputEditText cardNameView;
     Button finishView;
 
+    PackageModel packageModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
         setTitle(getString(R.string.activity_payment_title));
+        packageModel = Utils.verifyIfHasPackageOnIntent(this);
         bindViews();
         setPrice();
     }
@@ -43,6 +45,6 @@ public class PaymentActivity extends AppCompatActivity {
     }
 
     private void setPrice() {
-        priceView.setText(Utils.getPriceFormatted(new BigDecimal("0.00")));
+        priceView.setText(Utils.getPriceFormatted(packageModel.getPrice()));
     }
 }

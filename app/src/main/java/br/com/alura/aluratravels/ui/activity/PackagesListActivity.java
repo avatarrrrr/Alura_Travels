@@ -15,7 +15,7 @@ public class PackagesListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        startActivity(new Intent(this, PackageOverviewActivity.class));
+        startActivity(new Intent(this, PaymentOverviewActivity.class));
         setContentView(R.layout.activity_packages_list);
         setTitle(getString(R.string.packages_list_activity_title));
         configListView();

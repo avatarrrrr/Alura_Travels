@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.PaymentOverviewActivity">
+
+    <ImageView
+        android:id="@+id/payment_overview_imageview_banner"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@android:color/holo_orange_dark"
+        android:contentDescription="@string/activity_payment_imageview_banner_content_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/payment_overview_banner_textview_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:text="@string/activity_payment_overview_textview_title"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/payment_overview_imageview_banner"
+        app:layout_constraintStart_toStartOf="@id/payment_overview_imageview_banner"
+        app:layout_constraintTop_toTopOf="@id/payment_overview_imageview_banner" />
+
+    <TextView
+        android:id="@+id/payment_overview_banner_textview_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:text="@string/activity_payment_overview_textview_subtitle"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/payment_overview_imageview_banner"
+        app:layout_constraintStart_toStartOf="@id/payment_overview_imageview_banner"
+        app:layout_constraintTop_toBottomOf="@id/payment_overview_banner_textview_title" />
+
+    <TextView
+        android:id="@+id/payment_overview_textview_overview_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/activity_payment_overview_textview_overview_text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/payment_overview_imageview_banner" />
+
+    <ImageView
+        android:id="@+id/payment_overview_imageview_location"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/item_menu_image_content_description"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/payment_overview_textview_overview_text"
+        tools:src="@sample/packages.json/packages/image" />
+
+    <TextView
+        android:id="@+id/payment_overview_textView_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/payment_overview_imageview_location"
+        tools:text="@sample/packages.json/packages/location" />
+
+    <TextView
+        android:id="@+id/payment_overview_textView_period_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/payment_overview_textView_location"
+        app:layout_constraintTop_toBottomOf="@id/payment_overview_textView_location"
+        tools:text="@sample/packages.json/packages/time" />
+
+    <TextView
+        android:id="@+id/payment_overview_textView_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/payment_overview_textView_period_time"
+        app:layout_constraintTop_toBottomOf="@id/payment_overview_textView_period_time"
+        tools:text="@sample/packages.json/packages/price" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

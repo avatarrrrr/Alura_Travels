@@ -24,4 +24,9 @@
     <string name="activity_payment_button_finish">Finish</string>
     <string name="activity_payment_title">Payment</string>
     <string name="activity_payment_mask_card_number">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáéíóúâêôãõàçÁÉÓÚÂÊÔÃÕÀÇ\u0020</string>
+    <string name="activity_payment_overview_title">Payment Overview</string>
+    <string name="activity_payment_overview_textview_title">Congrats!</string>
+    <string name="activity_payment_overview_textview_subtitle">Package buy with success! 🎊</string>
+    <string name="activity_payment_imageview_banner_content_description">Banner with orange color</string>
+    <string name="activity_payment_overview_textview_overview_text">Take a look of the buy:</string>
 </resources>
