@@ -1,5 +1,6 @@
 package br.com.alura.aluratravels.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,6 +26,11 @@ public class PaymentOverviewActivity extends AppCompatActivity {
         packageReceived = Utils.verifyIfHasPackageOnIntent(this);
         bindViews();
         bindPackageOnViews();
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, PackagesListActivity.class));
     }
 
     private void bindPackageOnViews() {

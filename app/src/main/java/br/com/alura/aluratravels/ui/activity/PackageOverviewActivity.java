@@ -1,6 +1,7 @@
 package br.com.alura.aluratravels.ui.activity;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,6 +30,7 @@ public class PackageOverviewActivity extends AppCompatActivity {
         bindTextOnTextView(getString(R.string.days, packageModel.getDays()), R.id.package_overview_days);
         bindTextOnTextView(Utils.getPriceFormatted(packageModel.getPrice()), R.id.package_overview_price);
         bindTextOnTextView(Utils.getDestinationPeriodFormatted(packageModel.getDays(), this), R.id.package_overview_time);
+        setButtonPayClickBehavior(packageModel);
     }
 
     private void bindImage(String imageName) {
@@ -39,5 +41,17 @@ public class PackageOverviewActivity extends AppCompatActivity {
     private void bindTextOnTextView(String text, int viewIdentifier) {
         final TextView view = findViewById(viewIdentifier);
         view.setText(text);
+    }
+
+    private void setButtonPayClickBehavior(PackageModel packageModel) {
+        final Button payButtonView = findViewById(R.id.package_overview_button_pay);
+        payButtonView.setOnClickListener(v ->
+                startActivity(
+                        Utils.generateNewIntentWithPackage(PackageOverviewActivity.this,
+                                PaymentActivity.class,
+                                packageModel
+                        )
+                )
+        );
     }
 }

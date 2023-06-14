@@ -70,6 +70,7 @@
         tools:text="@sample/packages.json/packages/price" />
 
     <Button
+        android:id="@+id/package_overview_button_pay"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"

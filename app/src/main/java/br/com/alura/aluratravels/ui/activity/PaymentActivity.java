@@ -20,7 +20,6 @@ public class PaymentActivity extends AppCompatActivity {
     TextInputEditText cardCVCView;
     TextInputEditText cardNameView;
     Button finishView;
-
     PackageModel packageModel;
 
 
@@ -32,6 +31,7 @@ public class PaymentActivity extends AppCompatActivity {
         packageModel = Utils.verifyIfHasPackageOnIntent(this);
         bindViews();
         setPrice();
+        setButtonOnClickBehavior();
     }
 
     private void bindViews() {
@@ -46,5 +46,16 @@ public class PaymentActivity extends AppCompatActivity {
 
     private void setPrice() {
         priceView.setText(Utils.getPriceFormatted(packageModel.getPrice()));
+    }
+
+    private void setButtonOnClickBehavior() {
+        finishView.setOnClickListener(
+                v -> startActivity(
+                        Utils.generateNewIntentWithPackage(
+                                PaymentActivity.this,
+                                PaymentOverviewActivity.class,
+                                packageModel)
+                )
+        );
     }
 }
