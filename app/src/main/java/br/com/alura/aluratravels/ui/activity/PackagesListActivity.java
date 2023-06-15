@@ -10,12 +10,15 @@ import br.com.alura.aluratravels.ui.Utils;
 import br.com.alura.aluratravels.ui.adapter.PackagesListAdapter;
 import br.com.alura.aluraviagens.dao.PackagesDAO;
 import br.com.alura.aluraviagens.model.PackageModel;
+import androidx.core.splashscreen.SplashScreen;
+
 
 public class PackagesListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SplashScreen.installSplashScreen(this);
         setContentView(R.layout.activity_packages_list);
         setTitle(getString(R.string.packages_list_activity_title));
         configListView();
